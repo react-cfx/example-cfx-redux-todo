@@ -19,9 +19,3 @@ module.exports = mergeActionsTypes
     'REMOVE_TODO_STATE'
     'SET_VISIBILITY_FILTER'
   }
-  visibilityFilter:
-    types: {
-      'SHOW_ALL_TODO'
-      'SHOW_COMPLETED_TODO'
-      'SHOW_ACTIVE_TODO'
-    }

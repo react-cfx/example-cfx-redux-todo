@@ -1,6 +1,4 @@
 cuid = require 'cuid'
-constants = require '../constants/index'
-{ SHOW_ALL_TODO } = constants.types
 
 {
   normalize
@@ -11,7 +9,6 @@ constants = require '../constants/index'
 module.exports = do ->
 
   initial =
-    visibilityFilter: SHOW_ALL_TODO
     todo: (text) -> {
       id: cuid()
       text
@@ -26,9 +23,6 @@ module.exports = do ->
   {
     initial
     initialState:
-      # TODO coffee support
-      #   { visibilityFilter }: initial
-      visibilityFilter: initial.visibilityFilter
       todos: []
     normalizer
   }

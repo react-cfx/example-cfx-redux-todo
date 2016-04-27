@@ -13,7 +13,6 @@ constants = require '../constants/index'
   ADD_TODO_STATE
   MODIFY_TODO_STATE
   REMOVE_TODO_STATE
-  SET_VISIBILITY_FILTER
 } = constants.types
 
 {
@@ -23,18 +22,6 @@ constants = require '../constants/index'
 normalizerTodos = (
   require '../initials/index'
 ).normalizer.todos
-
-visibilityFilter = handleAction(
-  SET_VISIBILITY_FILTER
-  next: (state, action) ->
-    { filter } = action.payload
-    filter
-  throw: (state, action) ->
-    throw new Error {
-      state
-      action
-    }
-)
 
 todos = handleActions
 
@@ -71,7 +58,6 @@ todos = handleActions
 # , []
 
 todoApp = mergeReduce {
-  visibilityFilter
   todos
 }
 , initialState

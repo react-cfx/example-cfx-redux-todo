@@ -14,7 +14,6 @@ tasks = [
   require './addTodos'
   require './modifyTodo'
   require './removeTodo'
-  require './setVisibilityFilter'
   require './cleanTodos'
 ]
 

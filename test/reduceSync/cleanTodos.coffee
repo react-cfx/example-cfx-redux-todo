@@ -1,7 +1,3 @@
-constants = require '../../src/constants/index'
-Types = constants.types
-{ SHOW_COMPLETED_TODO } = Types
-
 actions = require '../../src/actions/index'
 { loadTodoState } = actions
 
@@ -13,7 +9,6 @@ module.exports =
 
   expected:
 
-    visibilityFilter: SHOW_COMPLETED_TODO
     todos: []
 
   actual: (store, task, tasks) ->

@@ -1,7 +1,3 @@
-constants = require '../../src/constants/index'
-Types = constants.types
-{ SHOW_ALL_TODO } = Types
-
 actions = require '../../src/actions/index'
 { addTodoState } = actions
 
@@ -16,7 +12,6 @@ module.exports =
   msg: 'add todos'
 
   expected:
-    visibilityFilter: SHOW_ALL_TODO
     todos: [
         text: 'Learn about actions'
         completed: false
