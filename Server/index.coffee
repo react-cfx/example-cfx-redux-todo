@@ -1,4 +1,5 @@
 #!/usr/bin/env coffee
+{ join } = require 'path'
 {
   create
   defaults
@@ -9,6 +10,6 @@ server = create()
 
 server.use defaults()
 server.use '/'
-, router 'todos.json'
+, router join "#{__dirname}/todos.json"
 
 server.listen 3000

@@ -1,5 +1,5 @@
-{ createActions } = require 'cfx.redux-actions'
+{ assign } = Object
+Todos = require './Todos'
 
-constants = require '../constants/index'
-
-module.exports = createActions constants.actions
+module.exports = assign {}
+, Todos
