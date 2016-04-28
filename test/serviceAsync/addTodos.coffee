@@ -1,9 +1,11 @@
 echo = console.log
 dd = require 'ddeyes'
 
-{ initial } = require '../../src/initials/index'
-
-services = require '../../src/services/index'
+{
+  initials
+  services
+} = require '../../src/index'
+{ initial } = initials
 
 module.exports = ->
 

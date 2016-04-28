@@ -5,7 +5,7 @@ test = require 'tape'
 
 { createStore } = require 'cfx.redux'
 
-reducers = require '../../src/reducers/index'
+{ reducers } = require '../../src/index'
 
 store = createStore
   todoApp: reducers

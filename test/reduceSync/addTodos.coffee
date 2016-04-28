@@ -1,11 +1,12 @@
-actions = require '../../src/actions/index'
-{ addTodoState } = actions
-
-{ initial } = require '../../src/initials/index'
-
-{ forPrintSiState } = require '../helper/index'
-
 SI = require 'cfx.seamless-immutable'
+{
+  actions
+  initials
+} = require '../../src/index'
+{ initial } = initials
+
+{ addTodoState } = actions
+{ forPrintSiState } = require '../helper/index'
 
 module.exports =
 

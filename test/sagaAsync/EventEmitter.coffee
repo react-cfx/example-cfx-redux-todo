@@ -4,7 +4,7 @@ EventEmitter = require 'eventemitter3'
 isEqual = require 'is-equal'
 jsonfile = require 'jsonfile'
 
-actions = require '../../src/actions/index'
+{ actions } = require '../../src/index'
 
 { forPrintSiState } = require '../helper/index'
 

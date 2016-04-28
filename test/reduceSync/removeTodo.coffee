@@ -1,5 +1,5 @@
-actions = require '../../src/actions/index'
 isEqual = require 'is-equal'
+{ actions } = require '../../src/index'
 { removeTodoState } = actions
 { forPrintSiState } = require '../helper/index'
 

@@ -1,6 +1,5 @@
-actions = require '../../src/actions/index'
+{ actions } = require '../../src/index'
 { loadTodoState } = actions
-
 { forPrintSiState } = require '../helper/index'
 
 module.exports =

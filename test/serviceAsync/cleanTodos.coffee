@@ -1,9 +1,10 @@
 echo = console.log
 dd = require 'ddeyes'
-services = require '../../src/services/index'
-normalizerTodos = (
-  require '../../src/initials/index'
-).normalizer.todos
+{
+  initials
+  services
+} = require '../../src/index'
+normalizerTodos = initials.normalizer.todos
 { getTodos } = require './helper'
 
 module.exports = ->

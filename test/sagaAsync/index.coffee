@@ -10,11 +10,10 @@ onStateChange = (
 { createStore } = require 'cfx.redux'
 { createSagaMiddleware } = require 'cfx.redux-saga'
 
-reducers = require '../../src/reducers/index'
-sagas = require '../../src/sagas/index'
-
-# constants = require '../../src/constants/index'
-# Types = constants.types
+{
+  reducers
+  sagas
+} = require '../../src/index'
 
 EE = require './EventEmitter'
 

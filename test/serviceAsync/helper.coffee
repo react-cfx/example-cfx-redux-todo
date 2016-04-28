@@ -1,7 +1,7 @@
 echo = console.log
 dd = require 'ddeyes'
 
-services = require '../../src/services/index'
+{ services } = require '../../src/index'
 
 {
   normalize

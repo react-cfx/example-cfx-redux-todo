@@ -2,6 +2,6 @@
 echo = console.log
 dd = require 'ddeyes'
 
-constants = require '../../src/constants/index'
+{ types } = require '../../src/index'
 
-dd constants
+dd types

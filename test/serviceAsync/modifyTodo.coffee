@@ -3,7 +3,7 @@ dd = require 'ddeyes'
 
 { assign } = Object
 
-services = require '../../src/services/index'
+{ services } = require '../../src/index'
 
 { getTodos } = require './helper'
 

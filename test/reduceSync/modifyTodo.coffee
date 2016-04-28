@@ -1,5 +1,5 @@
 { assign } = Object
-actions = require '../../src/actions/index'
+{ actions } = require '../../src/index'
 { modifyTodoState } = actions
 
 { forPrintSiState } = require '../helper/index'

@@ -2,7 +2,8 @@ echo = console.log
 dd = require 'ddeyes'
 EE = require './EventEmitter'
 
-{ initial } = require '../../src/initials/index'
+{ initials } = require '../../src/index'
+{ initial } = initials
 
 module.exports = (store, tasks, action) ->
   { dispatch } = store

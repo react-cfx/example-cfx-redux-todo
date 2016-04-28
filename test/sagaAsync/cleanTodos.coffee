@@ -2,9 +2,9 @@ echo = console.log
 dd = require 'ddeyes'
 EE = require './EventEmitter'
 
-normalizerTodos = (
-  require '../../src/initials/index'
-).normalizer.todos
+{ initials } = require '../../src/index'
+
+normalizerTodos = initials.normalizer.todos
 
 module.exports = (store, tasks, action) ->
   { dispatch } = store
