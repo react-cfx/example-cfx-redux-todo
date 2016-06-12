@@ -36,6 +36,15 @@ module.exports = handleActions
       todo
     } = action.payload
 
+    unless index
+      index = state.reduce (result, current, _index, array) ->
+        if current.id is todo.id
+        then _index
+        else result
+      , null
+
+    # TODO The todo is not exist.
+
     SI.Array.set state, index
     ,
       assign {}, state[index], todo

@@ -27,6 +27,15 @@ module.exports = handleActions({
   MODIFY_TODO_STATE: function(state, action) {
     var index, ref1, todo;
     ref1 = action.payload, index = ref1.index, todo = ref1.todo;
+    if (!index) {
+      index = state.reduce(function(result, current, _index, array) {
+        if (current.id === todo.id) {
+          return _index;
+        } else {
+          return result;
+        }
+      }, null);
+    }
     return SI.Array.set(state, index, assign({}, state[index], todo));
   },
   REMOVE_TODO_STATE: function(state, action) {
