@@ -1,11 +1,11 @@
 echo = console.log
-dd = require 'ddeyes'
-EE = require './EventEmitter'
+import dd from 'ddeyes'
+import EE from './EventEmitter'
 
-{ initials } = require '../../src/index'
+import { initials } from '../../src'
 { initial } = initials
 
-module.exports = (store, tasks, action) ->
+export default (store, tasks, action) ->
   { dispatch } = store
 
   try

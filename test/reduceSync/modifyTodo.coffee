@@ -1,10 +1,9 @@
-{ assign } = Object
-{ actions } = require '../../src/index'
+import dd from 'ddeyes'
+import { actions } from '../../src'
+import { forPrintSiState } from '../helper'
 { modifyTodoState } = actions
 
-{ forPrintSiState } = require '../helper/index'
-
-module.exports =
+export default task =
 
   msg: 'modify todo'
 

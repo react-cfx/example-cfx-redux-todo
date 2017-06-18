@@ -1,12 +1,11 @@
 echo = console.log
-dd = require 'ddeyes'
-EventEmitter = require 'eventemitter3'
-isEqual = require 'is-equal'
-jsonfile = require 'jsonfile'
+import dd from 'ddeyes'
+import EventEmitter from 'eventemitter3'
+import isEqual from 'is-equal'
+import jsonfile from 'jsonfile'
 
-{ actions } = require '../../src/index'
-
-{ forPrintSiState } = require '../helper/index'
+import { actions } from '../../src'
+import { forPrintSiState } from '../helper'
 
 {
   todoFetch
@@ -30,7 +29,7 @@ EE.on 'todoUpdate'
   dispatch todoUpdate action
 
 EE.on 'todoDelete'
-, (dispatch, action) ->
+, (dispatch, action = {}) ->
   dispatch todoDelete action
 
 EE.on 'tasksShift'
@@ -41,13 +40,14 @@ EE.on 'tasksShift'
   todoApp = forPrintSiState store.getState().todoApp
   todos = todoApp.todos
   jsonTodos = (
-    jsonfile.readFileSync '../../Server/todos.json'
+    jsonfile.readFileSync '../todos.json'
   ).todos
+
 
   unless isEqual todos, todoApp.todos
     throw new Error 'Data is not Synced.'
   else
-    dd todoApp
-    tasks[0] store, tasks
+    dd todos
+    tasks[0] store, tasks unless tasks.length is 0
 
-module.exports = EE
+export default EE

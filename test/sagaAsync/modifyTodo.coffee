@@ -1,11 +1,9 @@
 echo = console.log
-dd = require 'ddeyes'
-{ assign } = Object
+import dd from 'ddeyes'
+import EE from './EventEmitter'
+import isEqual from 'is-equal'
 
-EE = require './EventEmitter'
-isEqual = require 'is-equal'
-
-module.exports = (store, tasks, action) ->
+export default (store, tasks, action) ->
 
   return EE.emit 'todoFetch'
   , store.dispatch unless action
@@ -35,14 +33,14 @@ module.exports = (store, tasks, action) ->
     for waitConf in expected
       waitList.push
         index: waitConf.index
-        todo: assign {}
+        todo: Object.assign {}
         , todos[waitConf.index]
         , waitConf.todo
 
     return EE.emit 'todoUpdate'
     , store.dispatch
     ,
-      assign {}
+      Object.assign {}
       , waitList.shift()
       , { waitList }
 
@@ -57,7 +55,7 @@ module.exports = (store, tasks, action) ->
       return EE.emit 'todoUpdate'
       , store.dispatch
       ,
-        assign {}
+        Object.assign {}
         , waitList.shift()
         , { waitList }
 

@@ -2,31 +2,25 @@
 echo = console.log
 dd = require 'ddeyes'
 isEqual = require 'is-equal'
+gdf = (obj) -> obj.default
 
-onStateChange = (
-  require 'redux-on-state-change'
-).default
+onStateChange = gdf require 'redux-on-state-change'
 
 { createStore } = require 'cfx.redux'
-{ createSagaMiddleware } = require 'cfx.redux-saga'
+{ SagaMiddleware } = require 'cfx.redux-saga'
 
+require 'coffee-require/register'
 {
   reducers
   sagas
-} = require '../../src/index'
+} = require '../../src'
 
 EE = require './EventEmitter'
 
-task =
-  cleanTodos: require './cleanTodos'
-  addTodos: require './addTodos'
-  modifyTodo: require './modifyTodo'
-
 tasks = [
-  task.cleanTodos
-  task.addTodos
-  task.modifyTodo
-  task.cleanTodos
+  gdf require './addTodos'
+  gdf require './modifyTodo'
+  gdf require './cleanTodos'
 ]
 
 subscriber = (
@@ -40,11 +34,15 @@ subscriber = (
   unless tasks.length is 0
     tasks[0] store, tasks, action
 
+SagaMW = new SagaMiddleware()
+
 store = createStore
   todoApp: reducers
 , [
-  createSagaMiddleware sagas
+  SagaMW.getMidleware()
   onStateChange subscriber
 ]
+
+SagaMW.runSagas sagas
 
 tasks[0] store, tasks

@@ -1,8 +1,9 @@
-{ actions } = require '../../src/index'
+import dd from 'ddeyes'
+import { actions } from '../../src'
+import { forPrintSiState } from '../helper'
 { loadTodoState } = actions
-{ forPrintSiState } = require '../helper/index'
 
-module.exports =
+export default task =
 
   msg: 'clean todos'
 

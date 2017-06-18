@@ -1,20 +1,20 @@
 #!/usr/bin/env coffee
-echo = console.log
 dd = require 'ddeyes'
 test = require 'tape'
-
 { createStore } = require 'cfx.redux'
 
-{ reducers } = require '../../src/index'
+gdf = (obj) -> obj.default
+
+require 'coffee-require/register'
+{ reducers } = require '../../src'
 
 store = createStore
   todoApp: reducers
 
 tasks = [
-  require './addTodos'
-  require './modifyTodo'
-  require './removeTodo'
-  require './cleanTodos'
+  gdf require './addTodos'
+  gdf require './modifyTodo'
+  gdf require './cleanTodos'
 ]
 
 test 'Redux Test'

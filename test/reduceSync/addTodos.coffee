@@ -1,14 +1,15 @@
-SI = require 'cfx.seamless-immutable'
-{
+import dd from 'ddeyes'
+import SI from 'cfx.seamless-immutable'
+import {
   actions
   initials
-} = require '../../src/index'
+} from '../../src'
+import { forPrintSiState } from '../helper'
+
 { initial } = initials
-
 { addTodoState } = actions
-{ forPrintSiState } = require '../helper/index'
 
-module.exports =
+export default task =
 
   msg: 'add todos'
 

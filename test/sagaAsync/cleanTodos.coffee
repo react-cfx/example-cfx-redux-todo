@@ -1,12 +1,11 @@
 echo = console.log
-dd = require 'ddeyes'
-EE = require './EventEmitter'
+import dd from 'ddeyes'
+import EE from './EventEmitter'
 
-{ initials } = require '../../src/index'
-
+import { initials } from '../../src'
 normalizerTodos = initials.normalizer.todos
 
-module.exports = (store, tasks, action) ->
+export default (store, tasks, action) ->
   { dispatch } = store
 
   return EE.emit 'todoFetch'
