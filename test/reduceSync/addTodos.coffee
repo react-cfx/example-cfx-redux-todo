@@ -9,7 +9,7 @@ import { forPrintSiState } from '../helper'
 { initial } = initials
 { addTodoState } = actions
 
-export default task =
+export default {
 
   msg: 'add todos'
 
@@ -53,3 +53,5 @@ export default task =
     , expected, task.msg
 
     tasks.shift()
+    
+}

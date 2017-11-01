@@ -3,7 +3,7 @@ import { actions } from '../../src'
 import { forPrintSiState } from '../helper'
 { modifyTodoState } = actions
 
-export default task =
+export default {
 
   msg: 'modify todo'
 
@@ -51,3 +51,5 @@ export default task =
       , tasks
     else
       tasks.shift()
+      
+}

@@ -1,8 +1,7 @@
 import dd from 'ddeyes'
 import { services } from '../../src'
 service = services()
-import { default as helper } from './helper'
-{ getTodos } = helper
+import { getTodos } from './helper'
 
 export default ->
 
