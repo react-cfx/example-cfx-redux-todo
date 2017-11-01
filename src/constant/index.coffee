@@ -4,7 +4,7 @@ import {
 } from 'cfx.redux-types'
 import { crudActionsTypes } from 'cfx.redux-crud'
 
-export constants = mergeActionsTypes
+export default mergeActionsTypes
   Entry: toActionsTypes {
     'LOAD_TODO'
     'ADD_TODO'

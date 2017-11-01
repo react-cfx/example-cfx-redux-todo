@@ -1,12 +1,11 @@
 import dd from 'ddeyes'
-import { default as ReduxSaga } from 'cfx.redux-saga'
-{
+import {
   sagaEffects
   dispatch
-} = ReduxSaga
+} from 'cfx.redux-saga'
 
-import { constants } from '../constant'
-import { services } from '../service'
+import constants from '../constant'
+import services from '../service'
 service = services()
 
 {
@@ -52,12 +51,13 @@ Async =
       throw new Error ex
 
     return unless todos
-
-    newAction = Object.assign {}
-    , action
-    , payload:
-      Object.assign action.payload
-      , { todos }
+    
+    newAction = {
+      action...
+      payload: {
+        todos
+      }
+    }
 
     yield dispatch newAction
     , TODO_FETCH_SUCCESS
@@ -140,7 +140,7 @@ Async =
 
     return
 
-export sagas = [
+export default [
   ->
     yield sagaEffects.takeLatest TODO_FETCH
     , Async.fetch

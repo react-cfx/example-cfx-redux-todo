@@ -1,4 +1,3 @@
-echo = console.log
 import dd from 'ddeyes'
 import EventEmitter from 'eventemitter3'
 import isEqual from 'is-equal'
@@ -39,10 +38,10 @@ EE.on 'tasksShift'
 
   todoApp = forPrintSiState store.getState().todoApp
   todos = todoApp.todos
-  jsonTodos = (
-    jsonfile.readFileSync '../todos.json'
-  ).todos
 
+  jsonTodos = (
+    jsonfile.readFileSync '../server/todos.json'
+  ).todos
 
   unless isEqual todos, todoApp.todos
     throw new Error 'Data is not Synced.'

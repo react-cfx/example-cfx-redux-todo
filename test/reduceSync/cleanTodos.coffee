@@ -3,7 +3,7 @@ import { actions } from '../../src'
 import { forPrintSiState } from '../helper'
 { loadTodoState } = actions
 
-export default task =
+export default {
 
   msg: 'clean todos'
 
@@ -27,3 +27,6 @@ export default task =
     , task.expected, task.msg
 
     tasks.shift()
+  
+}
+

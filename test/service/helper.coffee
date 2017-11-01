@@ -1,10 +1,9 @@
-import * as todos from '../../src'
-{ services } = todos
+import { services } from '../../src'
 service = services()
 
 getTodos = ->
   yield service.fetch()
 
-export default {
+export {
   getTodos
 }

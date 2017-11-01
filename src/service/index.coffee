@@ -48,7 +48,7 @@ todos = (fetchFun, url) ->
     .then (res) -> res.json()
     .catch (ex) -> throw new Error ex
 
-export services = (resource) ->
+export default (resource) ->
   resource or=
     host: 'localhost'
     port: 3000

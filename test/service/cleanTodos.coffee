@@ -5,12 +5,11 @@ import {
 service = services()
 nTodos = initials.normalizer.todos
 
-import { default as helper } from './helper'
-{ getTodos } = helper
+import { getTodos } from './helper'
 
 export default ->
 
-  todos = yield from getTodos()
+  todos = yield getTodos()
 
   unless todos.length is 0
 

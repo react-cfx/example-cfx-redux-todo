@@ -1,4 +1,3 @@
-echo = console.log
 import dd from 'ddeyes'
 import EE from './EventEmitter'
 
@@ -7,7 +6,6 @@ import { initials } from '../../src'
 
 export default (store, tasks, action) ->
   { dispatch } = store
-
   try
     { waitList } = action.payload
   catch ex
@@ -22,7 +20,7 @@ export default (store, tasks, action) ->
     ]
 
   unless waitList.length is 0
-
+     
     return EE.emit 'todoCreate'
     , dispatch
     ,

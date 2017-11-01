@@ -6,7 +6,7 @@ import {
   schema
 } from 'normalizr'
 
-export initials = do ->
+export default do ->
 
   initial =
     todo: (text) -> {

@@ -1,4 +1,3 @@
-echo = console.log
 import dd from 'ddeyes'
 import EE from './EventEmitter'
 import isEqual from 'is-equal'

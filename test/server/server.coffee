@@ -1,7 +1,6 @@
-#!/usr/bin/env coffee
-{ join } = require 'path'
-fs = require 'fs'
-jsonServer = require 'json-server'
+import { join } from 'path'
+import fs from 'fs'
+import jsonServer from 'json-server'
 
 dbfile = join "#{__dirname}/todos.json"
 if fs.existsSync dbfile

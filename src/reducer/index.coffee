@@ -4,16 +4,17 @@ import { reduxActions } from 'cfx.redux-actions'
 import { mergeReduce } from 'cfx.redux'
 import SI from 'cfx.seamless-immutable'
 
-import { constants } from '../constant'
+import constants from '../constant'
+import initials from '../initial'
+
 {
   LOAD_TODO_STATE
   ADD_TODO_STATE
   MODIFY_TODO_STATE
   REMOVE_TODO_STATE
 } = constants.types
-import { initials } from '../initial'
-initialState = initials.state
 
+initialState = initials.state
 normalizerTodos = initials.normalizer.todos
 
 handler = handleActions
@@ -59,6 +60,7 @@ handler = handleActions
 
 , []
 
-export reducers = mergeReduce
+export default mergeReduce {
   todos: handler
+}
 , initialState

@@ -1,11 +1,11 @@
-import * as todos from '../../src'
-{
+import dd from 'ddeyes'
+import {
   services
   initials
-} = todos
+} from '../../src'
+
 service = services()
 { initial } = initials
-
 export default ->
 
   for text in [
