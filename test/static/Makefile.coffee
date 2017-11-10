@@ -26,6 +26,4 @@ target.initials = ->
   }
 
 target.services = ->
-  dd {
-    services
-  }
+  dd Object.keys services()

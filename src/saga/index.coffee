@@ -55,9 +55,12 @@ Async =
     newAction = {
       action...
       payload: {
+        action.payload...
         todos
       }
     }
+
+    dd newAction
 
     yield dispatch newAction
     , TODO_FETCH_SUCCESS

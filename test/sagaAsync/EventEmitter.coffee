@@ -1,4 +1,5 @@
 import dd from 'ddeyes'
+import { join } from 'path'
 import EventEmitter from 'eventemitter3'
 import isEqual from 'is-equal'
 import jsonfile from 'jsonfile'
@@ -40,7 +41,7 @@ EE.on 'tasksShift'
   todos = todoApp.todos
 
   jsonTodos = (
-    jsonfile.readFileSync '../server/todos.json'
+    jsonfile.readFileSync join "#{__dirname}/../server/todos.json"
   ).todos
 
   unless isEqual todos, todoApp.todos
